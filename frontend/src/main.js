@@ -1,6 +1,6 @@
 
 const counter = document.getElementById("counter");
-const tps = document.getElementById("tps");
+const ipt = document.getElementById("ipt");
 const upgrade1 = document.getElementById("upgrade1");
 
 function render () {
