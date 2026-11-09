@@ -27,4 +27,3 @@ function upgrade() {
     }
 }
 upgrade1.addEventListener("click", upgrade);
-console.log("Count = " + stats.count);
