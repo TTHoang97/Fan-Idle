@@ -5,7 +5,7 @@ const upgrade1 = document.getElementById("upgrade1");
 
 function render () {
     counter.textContent = stats.count;
-    tps.textContent = `Increase per tick :${stats.perTick} `;
+    ipt.textContent = `Increase per tick :${stats.perTick} `;
     upgrade1.textContent = `Upgrade (cost: ${upgradeCost()})`;
 }
 
