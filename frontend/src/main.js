@@ -2,6 +2,7 @@
 const counter = document.getElementById("counter");
 const ipt = document.getElementById("ipt");
 const upgrade1 = document.getElementById("upgrade1");
+const tickInterval = 1000;
 
 function render () {
     counter.textContent = stats.count;
@@ -33,10 +34,18 @@ function handleVisibilityChange(){
     }
 }
 
+function calcOffline(){
+    const offlineTime = Math.max(0,(Date.now() - stats.lastSaved));
+
+    stats.count = (stats.count + ((Math.floor(offlineTime/tickInterval)) * stats.perTick));
+    saveGame();
+}
+
 //Startup
 loadGame();
+calcOffline();
 render();
-const tickInterval = setInterval(tick, 1000);
+setInterval(tick, tickInterval);
 const autoSave = setInterval(saveGame, 60000);
 window.addEventListener('visibilitychange', handleVisibilityChange);
 upgrade1.addEventListener("click", upgrade);
