@@ -1,6 +1,7 @@
 const SAVE_KEY = "fanIdleSave";
 
 function saveGame(){
+    stats.lastSaved = Date.now();
     const saveData = JSON.stringify(stats);
     localStorage.setItem(SAVE_KEY, saveData);
 }
@@ -18,3 +19,4 @@ function loadGame(){
         console.warn("Failed to load save file with error.", err);
     }
 }
+
